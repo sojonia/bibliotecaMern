@@ -22,7 +22,7 @@ class BookList extends Component {
     axios
 
       // GET is used to request data from a specified resource.
-      .get("http://localhost:4000/api/books")
+      .get("/")
       .then(res => {
         this.setState({
           // reciving books from DB - updating state

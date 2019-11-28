@@ -15,7 +15,7 @@ class ShowBookDetails extends Component {
   componentDidMount() {
     console.log(this.props.match.params.id);
     axios
-      .get("https://mern-stack-books.herokuapp.com/" + this.props.match.params.id)
+      .get("/:id" + this.props.match.params.id)
       .then(res => {
         this.setState({
           book: res.data
@@ -31,7 +31,7 @@ class ShowBookDetails extends Component {
     axios
 
       // The DELETE method deletes the specified resource.
-      .delete("https://mern-stack-books.herokuapp.com/" + id)
+      .delete("/:id" + id)
       .then(res => {
         this.props.history.push("/");
       })

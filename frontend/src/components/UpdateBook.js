@@ -21,7 +21,7 @@ class UpdateBookInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get("https://mern-stack-books.herokuapp.com/" + this.props.match.params.id)
+      .get("/:id" + this.props.match.params.id)
       .then(({ data }) => {
         this.setState({ book: data });
       })
@@ -39,7 +39,7 @@ class UpdateBookInfo extends Component {
 
     axios
       .put(
-        "https://mern-stack-books.herokuapp.com/" + this.props.match.params.id,
+        "/:id" + this.props.match.params.id,
         this.state.book
       )
       .then(res => {
