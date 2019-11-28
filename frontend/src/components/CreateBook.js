@@ -40,7 +40,9 @@ class CreateBook extends Component {
     //  This endpoint is expecting to get the new book object in JSON format in the request body.
     // Therefore we need to pass in the book object as a second argument.
     axios
-      .post("http://localhost:4000/api/books", book)
+      // .post("http://localhost:4000/api/books", book)
+            .post("https://mern-stack-books.herokuapp.com/", book)
+
       .then(res => {
         this.setState({
           title: "",
