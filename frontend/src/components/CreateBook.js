@@ -41,7 +41,7 @@ class CreateBook extends Component {
     // Therefore we need to pass in the book object as a second argument.
     axios
       // .post("http://localhost:4000/api/books", book)
-            .post("/", book)
+            .post("/api/books/", book)
 
       .then(res => {
         this.setState({

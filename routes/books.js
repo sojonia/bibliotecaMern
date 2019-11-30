@@ -17,6 +17,7 @@ router
   .post(createBook);
 
 router
+  // .route("/:id")
   .route("/:id")
   .get(getBook)
   .delete(deleteBook)

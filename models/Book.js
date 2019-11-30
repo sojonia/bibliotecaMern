@@ -27,4 +27,4 @@ const bookSchema = new Schema({
 });
 
 // Compiling our schema into a Model.
-module.exports = model("comment", bookSchema);
+module.exports = model('Book', bookSchema);

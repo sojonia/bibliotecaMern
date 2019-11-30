@@ -3,11 +3,12 @@ const mongoose = require("mongoose");
 // environment variables
 require("dotenv").config();
 
+
 // Choose URI between .env or local path
 const URI = process.env.MONGODB_URI
-  // ? process.env.MONGODB_URI
-  // : "mongodb://localhost/merndatabase";
-console.log(process.env.MONGODB_URI);
+  ? process.env.MONGODB_URI
+  : "mongodb://localhost/merndatabase";
+// console.log(process.env.MONGODB_URI);
 
 // Connection
 const connectDB = async () => {
