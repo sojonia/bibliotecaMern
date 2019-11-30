@@ -31,6 +31,13 @@ app.use("/api/books", require("./routes/books"));
   // });
 // }
 
+
+// serves the built version of your react app
+app.use(express.static(path.join(__dirname, 'frontend/build')))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
+})
+
 // for your REST calls, append api to the beginning of the path
 // ex: 
 app.get('/api/books', async (req, res) => {
