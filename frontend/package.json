@@ -35,5 +35,5 @@
     ]
   },
 
-  "proxy": "http://localhost:4000"
+  "proxy": "https://mern-stack-books.herokuapp.com"
 }

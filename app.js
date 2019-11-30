@@ -11,7 +11,7 @@ const Post = require('./models/Book')
 require("./db");
 
 // Setting port
-const port = process.env.PORT || 4000;
+const port = process.env.PORT;
 
 // middlewares
 app.use(cors());
