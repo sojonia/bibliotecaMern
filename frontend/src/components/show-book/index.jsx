@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./BookDetails.css";
+import "./style.css";
 import axios from "axios";
 
 // READ-obtener-GET
@@ -13,10 +13,8 @@ class ShowBookDetails extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.id);
     axios
-      .get("/api/books/" + this.props.match.params.id)
-      // .get(`/api/books/id/${this.props.match.params.id}`)
+      .get(`/api/books/${this.props.match.params.id}`)
       .then(res => {
         this.setState({
           book: res.data
@@ -44,7 +42,6 @@ class ShowBookDetails extends Component {
   // render method
   render() {
     const book = this.state.book;
-    console.log(book);
     let BookItem = (
       <section>
         <table className="table table-hover table-dark">
@@ -88,8 +85,8 @@ class ShowBookDetails extends Component {
       <section className="ShowBookDetails">
         <div className="container">
           <div className="row">
-            <nav className="col-md-10 m-auto">
-              <Link to="/" className="btn btn-show-all-books float-left">
+            <nav className="col-md-10 ">
+              <Link to="/" className="btn btn-show-all-books">
                 Muestra la lista de libros.
               </Link>
             </nav>

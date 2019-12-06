@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "../App.css";
+// import "../App.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import BookCard from "./BookCard";
-import "./BookList.css";
+import BookCard from "../book-card/index";
+import "./style.css";
 
 // READ-obtener-GET
 class BookList extends Component {
@@ -22,7 +22,7 @@ class BookList extends Component {
     axios
 
       // GET is used to request data from a specified resource.
-      .get("/api/books/")
+      .get("/api/books")
       .then(res => {
         this.setState({
           // reciving books from DB - updating state
@@ -38,13 +38,12 @@ class BookList extends Component {
   render() {
     // actual state
     const books = this.state.books;
-    console.log(books);
     return (
       <section className="ShowBookList">
         <div className="container">
           <div className="row">
             <header className="col-md-12">
-              <h2 className="display-4 text-center p-3">Lista de libros</h2>
+              <h2 className="display-4 text-center p-3">Libros Disponibles</h2>
             </header>
             <div className="col-md-11">
               <Link

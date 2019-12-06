@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
+import "../../App.css";
 import axios from "axios";
-import "./CreateBook.css";
+import "./style.css";
 // CREATE-enviar-POST
 //Create Book Component-class component
 class CreateBook extends Component {
@@ -40,8 +40,7 @@ class CreateBook extends Component {
     //  This endpoint is expecting to get the new book object in JSON format in the request body.
     // Therefore we need to pass in the book object as a second argument.
     axios
-      // .post("http://localhost:4000/api/books", book)
-            .post("/api/books/", book)
+      .post("/api/books", book)
 
       .then(res => {
         this.setState({
@@ -58,13 +57,7 @@ class CreateBook extends Component {
         console.log("Error in CreateBook!");
       });
     console.log(`Form submitted:`);
-    // console.log(`${book}`)
-    console.log(`title: ${book.title}`);
-    console.log(`title: ${book.isbn}`);
-    console.log(`title: ${book.author}`);
-    console.log(`title: ${book.description}`);
-    console.log(`title: ${book.published_date}`);
-    console.log(`title: ${book.publisher}`);
+
   };
   //render method
   render() {

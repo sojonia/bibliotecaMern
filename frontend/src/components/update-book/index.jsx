@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "../App.css";
-
+// import "../../App.css";
+import "./style.css";
 class UpdateBookInfo extends Component {
   constructor(props) {
     super(props);
@@ -19,9 +19,8 @@ class UpdateBookInfo extends Component {
   }
 
   componentDidMount() {
-    // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get("/api/books/"+this.props.match.params.id)
+      .get(`/api/books/${this.props.match.params.id}`)
       .then(({ data }) => {
         this.setState({ book: data });
       })
@@ -31,17 +30,15 @@ class UpdateBookInfo extends Component {
   }
 
   onChange = e => {
-    this.setState({ book: { [e.target.name]: e.target.value } });
+    this.setState({
+      book: { [e.target.name]: e.target.value }
+    });
   };
 
   onSubmit = e => {
     e.preventDefault();
-
     axios
-      .put(
-        "/api/books/" + this.props.match.params.id,
-        this.state.book
-      )
+      .put(`/api/books/${this.props.match.params.id}`, this.state.book)
       .then(res => {
         this.props.history.push("/show-book/" + this.props.match.params.id);
       })
@@ -56,17 +53,13 @@ class UpdateBookInfo extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <br />
               {/* Link to Books List */}
-              <Link to="/" className="btn btn-outline-warning float-left">
+              <Link to="/" className="btn btn-show-all-books">
                 Mostrar lista de libros
               </Link>
             </div>
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Editar Libro</h1>
-              <p className="lead text-center">
-                Actualizar la informacion del libro
-              </p>
             </div>
           </div>
 
@@ -83,8 +76,6 @@ class UpdateBookInfo extends Component {
                   onChange={this.onChange}
                 />
               </div>
-              <br />
-
               <div className="form-group">
                 <label htmlFor="isbn">ISBN</label>
                 <input
@@ -146,7 +137,7 @@ class UpdateBookInfo extends Component {
 
               <button
                 type="submit"
-                className="btn btn-outline-info btn-lg btn-block"
+                className="btn btn-update-book btn-lg btn-block"
               >
                 Actualizar libro
               </button>

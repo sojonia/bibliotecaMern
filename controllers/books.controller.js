@@ -25,7 +25,6 @@ booksCtrl.createBook = (req, res) => {
 // route '/:id' GET
 // Get single book by id
 booksCtrl.getBook = (req, res) => {
-  console.log("req", req);
   Book.findById(req.params.id)
     .then(book => res.json(book))
     .catch(err => res.status(404).json({ nobookfound: "No Book found" }));

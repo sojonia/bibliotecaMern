@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./BookCard.css";
+import "./style.css";
 
 // Funtional component with props
 const BookCard = props => {
@@ -15,6 +15,7 @@ const BookCard = props => {
         </Link>
       </h2>
       <h3>{book.author}</h3>
+      <h4>{book.publisher}</h4>
       <p>{book.description}</p>
     </div>
   );

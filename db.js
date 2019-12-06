@@ -8,7 +8,6 @@ require("dotenv").config();
 const URI = process.env.MONGODB_URI
   ? process.env.MONGODB_URI
   : "mongodb://localhost/merndatabase";
-// console.log(process.env.MONGODB_URI);
 
 // Connection
 const connectDB = async () => {

@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+.ShowBookList {
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  max-width: 100vw;
+  min-height: 100vh;
+  padding: 30px;
+}
+.btn-add-book {
+  background-color: #ff0098;
+  color: white;
+}
