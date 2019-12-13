@@ -38,6 +38,7 @@ class BookList extends Component {
   render() {
     // actual state
     const books = this.state.books;
+    console.log(books)
     return (
       <section className="ShowBookList">
         <div className="container">
