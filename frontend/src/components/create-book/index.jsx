@@ -24,7 +24,7 @@ class CreateBook extends Component {
   }
   //Events Handlers - Class Methods
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({...this.state.book, [e.target.name]: e.target.value });
   };
   handleSubmit = e => {
     e.preventDefault();

@@ -31,7 +31,7 @@ class UpdateBookInfo extends Component {
 
   onChange = e => {
     this.setState({
-      book: { [e.target.name]: e.target.value }
+      book: {...this.state.book, [e.target.name]: e.target.value }
     });
   };
 
